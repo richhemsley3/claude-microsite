@@ -326,7 +326,32 @@
           <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M3 10a7 7 0 0114 0 7 7 0 01-14 0z" stroke="currentColor" stroke-width="1.5"/><path d="M10 7v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           Example evaluation output — Review Agent Findings
         </div>
-        <img src="assets/qa-evaluation-example.png" alt="Screenshot of heuristic evaluation showing 19 high-severity issues including missing empty states, non-functional buttons, and missing JavaScript handlers across multiple prototype pages" class="qa-example-img" />
+        <div class="qa-table-wrap">
+          <div class="qa-table-header">
+            <span class="qa-severity qa-severity--high"></span>
+            <strong>High (19 issues)</strong> — Missing empty states, non-functional critical buttons, missing JS
+          </div>
+          <table class="qa-table">
+            <thead>
+              <tr><th>#</th><th>Page</th><th>Issue</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>catalog.html</td><td>No empty state when filters return zero results — blank table body</td></tr>
+              <tr><td>2</td><td>catalog.html</td><td>Non-domain filter checkboxes (Source Type, Classification, Quality, Freshness) are placeholders — don't actually filter</td></tr>
+              <tr><td>3</td><td>catalog.html</td><td>Sortable column headers have no sort JS</td></tr>
+              <tr><td>4</td><td>quality.html</td><td>"Disabled" tab shows blank table — no empty state message</td></tr>
+              <tr><td>5</td><td>quality.html</td><td>Pagination buttons non-functional (no handlers)</td></tr>
+              <tr><td>6</td><td>security.html</td><td>"Auto-Fix" and "Classify" buttons — no handlers, no feedback</td></tr>
+              <tr><td>7</td><td>governance.html</td><td>6 "Start" buttons — no handlers, no feedback</td></tr>
+              <tr><td>8</td><td>lineage.html</td><td>DAG nodes not clickable — can't select different nodes, panel never updates</td></tr>
+              <tr><td>9</td><td>lineage.html</td><td>Panel close has no reopen mechanism</td></tr>
+              <tr><td>10</td><td>asset.html</td><td>Primary "Edit" button — no handler</td></tr>
+              <tr><td>11</td><td>settings.html</td><td>Bulk action buttons (Pause/Resume/Re-Sync/Delete) — no handlers</td></tr>
+              <tr><td>12</td><td>organization.html</td><td>"Save Preferences" — no handler, no feedback</td></tr>
+              <tr><td>13</td><td>users.html</td><td>Pagination is cosmetic only — rows don't change</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="self-heal-callout">

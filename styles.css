@@ -713,10 +713,71 @@ body {
   color: var(--sds-color-text-tertiary);
   flex-shrink: 0;
 }
-.qa-example-img {
-  display: block;
+.qa-table-wrap {
+  padding: 20px;
+}
+.qa-table-header {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--sds-color-text-primary);
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.qa-table-header strong {
+  white-space: nowrap;
+}
+.qa-severity {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.qa-severity--high {
+  background: var(--sds-status-danger-text, #d32f2f);
+}
+.qa-table {
   width: 100%;
-  height: auto;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.qa-table thead {
+  background: var(--sds-color-surface-secondary);
+}
+.qa-table th {
+  text-align: left;
+  padding: 8px 12px;
+  font-weight: 600;
+  color: var(--sds-color-text-secondary);
+  border-bottom: 1px solid var(--sds-color-border-default);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.qa-table th:first-child { width: 36px; }
+.qa-table th:nth-child(2) { width: 140px; }
+.qa-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--sds-color-border-default);
+  color: var(--sds-color-text-primary);
+  vertical-align: top;
+}
+.qa-table td:first-child {
+  color: var(--sds-color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+.qa-table td:nth-child(2) {
+  font-weight: 600;
+  font-size: 12px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+.qa-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.qa-table tbody tr:hover {
+  background: var(--sds-color-surface-secondary);
 }
 
 .self-heal-callout {
