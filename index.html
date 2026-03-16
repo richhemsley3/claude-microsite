@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude as Design Partner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header-left">
+      <svg class="logo-mark" width="28" height="28" viewBox="0 0 16 16" fill="none">
+        <rect x="2" y="2" width="12" height="12" rx="2" transform="rotate(0 8 8)" fill="var(--sds-interactive-primary)"/>
+        <rect x="5" y="5" width="6" height="6" rx="1" fill="white" opacity="0.9"/>
+      </svg>
+      <span class="logo-text">Claude Experimentation</span>
+    </div>
+    <nav class="header-nav">
+      <a href="#approach" class="header-link">Approach</a>
+      <a href="#skills" class="header-link">Skills</a>
+      <a href="#foundations" class="header-link">Foundations</a>
+      <a href="#pipeline" class="header-link">Pipeline</a>
+      <a href="#qa" class="header-link">QA</a>
+      <a href="#artifacts" class="header-link">Artifacts</a>
+    </nav>
+    <div class="header-right">
+      <span class="author-tag">Rich Hemsley</span>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-circle hero-circle-1"></div>
+      <div class="hero-circle hero-circle-2"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Claude as<br>Design Partner</h1>
+      <p class="hero-subtitle">A Personal Experiment in AI-Augmented Design</p>
+      <a href="#approach" class="hero-cta">
+        Explore the Process
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10m0 0l4-4m-4 4L4 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ THE APPROACH ═══ -->
+  <section class="section" id="approach">
+    <div class="container">
+      <span class="section-label">Overview</span>
+      <h2 class="section-title">The Approach</h2>
+      <p class="section-desc">Four steps to building an AI-powered design workflow</p>
+
+      <div class="steps-grid">
+        <div class="step-card" data-step="01" style="--step-color: var(--sds-color-brand-atlantic)">
+          <span class="step-num">01</span>
+          <h3 class="step-title">Create Skills</h3>
+          <p class="step-desc">Build specialized agents for each design discipline</p>
+        </div>
+        <div class="step-card" data-step="02" style="--step-color: var(--sds-color-blue-600)">
+          <span class="step-num">02</span>
+          <h3 class="step-title">Build Foundations</h3>
+          <p class="step-desc">Code-first design system and agent templates</p>
+        </div>
+        <div class="step-card" data-step="03" style="--step-color: var(--sds-color-brand-fern)">
+          <span class="step-num">03</span>
+          <h3 class="step-title">Run the Agents</h3>
+          <p class="step-desc">Orchestrate agents through a structured design process</p>
+        </div>
+        <div class="step-card" data-step="04" style="--step-color: var(--sds-color-brand-birch)">
+          <span class="step-num">04</span>
+          <h3 class="step-title">Check the Work</h3>
+          <p class="step-desc">Multi-layered QA with critique, heuristics, and accessibility</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THE AGENT TEAM ═══ -->
+  <section class="section section--surface" id="skills">
+    <div class="container">
+      <span class="section-label">Step 1 — Create Skills</span>
+      <h2 class="section-title">The Agent Team</h2>
+      <p class="section-desc">Six specialized skills, each trained for a specific design discipline</p>
+
+      <div class="agent-grid">
+        <div class="agent-card" style="--agent-color: var(--sds-color-brand-atlantic); --agent-bg: var(--sds-status-info-bg)">
+          <div class="agent-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="agent-header">
+            <h3 class="agent-title">Researcher</h3>
+          </div>
+          <p class="agent-desc">Runs market & user research using Claude's knowledge and internet sources. Trained on white papers, best practices, and research methodologies.</p>
+        </div>
+
+        <div class="agent-card" style="--agent-color: var(--sds-color-blue-600); --agent-bg: var(--sds-status-info-bg)">
+          <div class="agent-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2v4m0 8v4M2 10h4m8 0h4M4.5 4.5l2.5 2.5m6 6l2.5 2.5M15.5 4.5l-2.5 2.5m-6 6L4.5 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="agent-header">
+            <h3 class="agent-title">Architect</h3>
+          </div>
+          <p class="agent-desc">Reviews designs for broken paths and inconsistent workflows. Builds user flows, journey maps, and phased work plans for delivery.</p>
+        </div>
+
+        <div class="agent-card" style="--agent-color: var(--sds-color-brand-fern); --agent-bg: var(--sds-status-success-bg)">
+          <div class="agent-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="12" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="7" y="12" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="agent-header">
+            <h3 class="agent-title">Component Builder</h3>
+          </div>
+          <p class="agent-desc">Creates new design components during live sessions using semantic design conventions. Triggered automatically when the Product Designer needs a missing component.</p>
+        </div>
+
+        <div class="agent-card" style="--agent-color: var(--sds-color-brand-birch); --agent-bg: var(--sds-status-error-bg)">
+          <div class="agent-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 15l4-8 3 4 3-6 4 10H3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="agent-header">
+            <h3 class="agent-title">Product Designer</h3>
+          </div>
+          <p class="agent-desc">Handles core UI design, interactive elements, content, and layouts. Pulls from the design system and delegates to Component Builder for missing pieces.</p>
+        </div>
+
+        <div class="agent-card" style="--agent-color: var(--sds-color-purple-550); --agent-bg: var(--sds-status-purple-bg)">
+          <div class="agent-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="agent-header">
+            <h3 class="agent-title">Critique & Heuristics</h3>
+          </div>
+          <p class="agent-desc">Two agents: Critique gives feedback on layout, hierarchy, and visual design. Heuristic evaluates against UX heuristics and best practices with criticality ratings.</p>
+        </div>
+
+        <div class="agent-card" style="--agent-color: var(--sds-color-blue-700); --agent-bg: var(--sds-status-info-bg)">
+          <div class="agent-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M5 12c0 3 2.2 6 5 6s5-3 5-6" stroke="currentColor" stroke-width="1.5"/><path d="M8 7h4M10 5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="agent-header">
+            <h3 class="agent-title">Accessibility</h3>
+          </div>
+          <p class="agent-desc">Full accessibility review covering color contrast, ARIA attributes, keyboard controls, ADA affordances, and more. Final gate before completion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOUNDATIONS ═══ -->
+  <section class="section" id="foundations">
+    <div class="container">
+      <span class="section-label">Step 2 — Build Foundations</span>
+      <h2 class="section-title">Building the Foundations</h2>
+      <p class="section-desc">Before the agents can design, they need a shared language</p>
+
+      <div class="foundation-grid">
+        <div class="foundation-card">
+          <div class="foundation-icon" style="--f-color: var(--sds-color-brand-atlantic); --f-bg: var(--sds-status-info-bg)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 3l9 9-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="foundation-title">Code-First Design System</h3>
+          <p class="foundation-desc">Built an entire design system from scratch using only a text prompt. Fed in the Beacon color palette — everything else was just me and a text box.</p>
+          <div class="foundation-tags">
+            <span class="tag" style="--tag-color: var(--sds-color-brand-atlantic); --tag-bg: var(--sds-status-info-bg)">Semantic tokens</span>
+            <span class="tag" style="--tag-color: var(--sds-color-brand-atlantic); --tag-bg: var(--sds-status-info-bg)">Component library</span>
+            <span class="tag" style="--tag-color: var(--sds-color-brand-atlantic); --tag-bg: var(--sds-status-info-bg)">Prompt-driven</span>
+          </div>
+        </div>
+
+        <div class="foundation-card">
+          <div class="foundation-icon" style="--f-color: var(--sds-color-brand-fern); --f-bg: var(--sds-status-success-bg)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="6" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="18" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 11l10-4M7 13l10 4" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="foundation-title">Agent Templates</h3>
+          <p class="foundation-desc">Created reusable templates that agents use as canvases for their output — structured formats that keep work consistent across sessions.</p>
+          <div class="foundation-tags">
+            <span class="tag" style="--tag-color: var(--sds-color-brand-fern); --tag-bg: var(--sds-status-success-bg)">User journeys</span>
+            <span class="tag" style="--tag-color: var(--sds-color-brand-fern); --tag-bg: var(--sds-status-success-bg)">User flow charts</span>
+            <span class="tag" style="--tag-color: var(--sds-color-brand-fern); --tag-bg: var(--sds-status-success-bg)">Demo canvas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ORCHESTRATION ═══ -->
+  <section class="section section--surface" id="orchestration">
+    <div class="container">
+      <span class="section-label">Step 3 — Run the Agents</span>
+      <h2 class="section-title">Orchestration</h2>
+      <p class="section-desc">An orchestration agent manages the entire design process end-to-end</p>
+
+      <div class="orch-grid">
+        <div class="orch-card">
+          <div class="orch-icon" style="--o-color: var(--sds-color-brand-atlantic); --o-bg: var(--sds-status-info-bg)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M17.5 14v7M14 17.5h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="orch-title">How It Works</h3>
+          <ul class="orch-list">
+            <li>Tell Claude what to build</li>
+            <li>It creates a plan and launches agents</li>
+            <li>Agents work autonomously through tasks</li>
+            <li>Only asks for input when it needs more detail</li>
+            <li>Results flow from one agent to the next</li>
+          </ul>
+        </div>
+
+        <div class="orch-card">
+          <div class="orch-icon" style="--o-color: var(--sds-color-brand-fern); --o-bg: var(--sds-status-success-bg)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7l3-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="orch-title">Key Principle</h3>
+          <p class="orch-desc">The orchestrator treats design like a structured workflow — not a single prompt. Each agent receives the artifacts from previous agents, maintaining context and building on prior work.</p>
+          <div class="orch-callout">
+            <strong>Shared Context</strong>
+            <span>Research findings are fed to design agents so everyone starts with the same foundational knowledge</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THE PIPELINE ═══ -->
+  <section class="section" id="pipeline">
+    <div class="container">
+      <span class="section-label">Step 3 — The Pipeline</span>
+      <h2 class="section-title">The Design Pipeline</h2>
+      <p class="section-desc">Each agent breaks features into sub-tasks, checks its own work, then hands off to the next stage</p>
+
+      <div class="pipeline">
+        <div class="pipeline-stage" style="--p-color: var(--sds-color-brand-atlantic); --p-bg: var(--sds-status-info-bg)">
+          <div class="pipeline-num">1</div>
+          <div class="pipeline-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="pipeline-title">Research</h3>
+          <p class="pipeline-desc">Agent creates a report to evaluate</p>
+        </div>
+        <div class="pipeline-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0l-4-4m4 4l-4 4" stroke="var(--sds-border-strong)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="pipeline-stage" style="--p-color: var(--sds-color-blue-600); --p-bg: var(--sds-status-info-bg)">
+          <div class="pipeline-num">2</div>
+          <div class="pipeline-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M5.5 5.5l2.5 2.5m8 8l2.5 2.5M18.5 5.5l-2.5 2.5m-8 8L5.5 18.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="pipeline-title">Architecture</h3>
+          <p class="pipeline-desc">User flows, journey maps, work plans</p>
+        </div>
+        <div class="pipeline-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0l-4-4m4 4l-4 4" stroke="var(--sds-border-strong)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="pipeline-stage" style="--p-color: var(--sds-color-brand-fern); --p-bg: var(--sds-status-success-bg)">
+          <div class="pipeline-num">3</div>
+          <div class="pipeline-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 17l5-10 4 5 3-7 5 12H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="pipeline-title">Design</h3>
+          <p class="pipeline-desc">Click-through prototype build</p>
+        </div>
+        <div class="pipeline-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0l-4-4m4 4l-4 4" stroke="var(--sds-border-strong)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="pipeline-stage" style="--p-color: var(--sds-color-brand-birch); --p-bg: var(--sds-status-error-bg)">
+          <div class="pipeline-num">4</div>
+          <div class="pipeline-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="pipeline-title">Evaluation</h3>
+          <p class="pipeline-desc">Screen flow diagram for end-to-end review</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ QUALITY ASSURANCE ═══ -->
+  <section class="section section--surface" id="qa">
+    <div class="container">
+      <span class="section-label">Step 4 — Check the Work</span>
+      <h2 class="section-title">Quality Assurance</h2>
+      <p class="section-desc">Multiple review layers ensure the output meets professional standards</p>
+
+      <div class="qa-stack">
+        <div class="qa-card" style="--qa-color: var(--sds-color-purple-550); --qa-bg: var(--sds-status-purple-bg)">
+          <div class="qa-accent"></div>
+          <div class="qa-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="qa-content">
+            <h3 class="qa-title">Critique & Heuristic Review</h3>
+            <p class="qa-desc">Multiple checks across the end-to-end experience. Categorized findings with criticality ratings. Can self-heal or await approval.</p>
+          </div>
+        </div>
+
+        <div class="qa-card" style="--qa-color: var(--sds-color-brand-fern); --qa-bg: var(--sds-status-success-bg)">
+          <div class="qa-accent"></div>
+          <div class="qa-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 2v3M13 2v3M3 8h14M5 4h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="qa-content">
+            <h3 class="qa-title">Research-Driven Improvements</h3>
+            <p class="qa-desc">Research agent evaluates the prototype through the lens of customer value. Major findings trigger a re-run of the design pipeline.</p>
+          </div>
+        </div>
+
+        <div class="qa-card" style="--qa-color: var(--sds-color-blue-700); --qa-bg: var(--sds-status-info-bg)">
+          <div class="qa-accent"></div>
+          <div class="qa-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.5 4.5H16l-3.5 3 1.5 4.5L10 11l-4 3 1.5-4.5L4 6.5h4.5L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="qa-content">
+            <h3 class="qa-title">Accessibility Gate</h3>
+            <p class="qa-desc">Final pass to catch any missed contrast, ARIA, keyboard, or ADA issues introduced during iterations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="self-heal-callout">
+        <svg class="self-heal-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10a7 7 0 0113.5-2.5M17 10a7 7 0 01-13.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16.5 3v4.5H12M3.5 17v-4.5H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="self-heal-text">
+          <strong>Self-Healing Loop</strong>
+          <span>Run multiple automated fix cycles before manual evaluation — gets the prototype to a solid state before human review begins</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THE ITERATIVE LOOP ═══ -->
+  <section class="section" id="loop">
+    <div class="container">
+      <span class="section-label">Step 4 — Iteration</span>
+      <h2 class="section-title">The Iterative Loop</h2>
+      <p class="section-desc">Design, review, fix, repeat — until the experience is right</p>
+
+      <div class="loop-flow">
+        <div class="loop-row">
+          <div class="loop-card" style="--l-color: var(--sds-color-brand-atlantic)">
+            <span class="loop-label">Design Agents Build</span>
+          </div>
+          <div class="loop-arrow loop-arrow--right">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28m0 0l-5-5m5 5l-5 5" stroke="var(--sds-border-strong)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="loop-card" style="--l-color: var(--sds-color-purple-550)">
+            <span class="loop-label">Critique & Heuristic Review</span>
+          </div>
+          <div class="loop-arrow loop-arrow--right">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28m0 0l-5-5m5 5l-5 5" stroke="var(--sds-border-strong)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="loop-card" style="--l-color: var(--sds-color-brand-birch)">
+            <span class="loop-label">Self-Heal Cycles</span>
+          </div>
+        </div>
+
+        <div class="loop-connector">
+          <svg width="16" height="40" viewBox="0 0 16 40" fill="none"><path d="M8 0v36m0 0l-5-5m5 5l5-5" stroke="var(--sds-border-strong)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div class="loop-row loop-row--reverse">
+          <div class="loop-card" style="--l-color: var(--sds-color-blue-700)">
+            <span class="loop-label">Accessibility Final Gate</span>
+          </div>
+          <div class="loop-arrow loop-arrow--left">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M32 8H4m0 0l5-5M4 8l5 5" stroke="var(--sds-border-strong)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="loop-card" style="--l-color: var(--sds-color-blue-600)">
+            <span class="loop-label">Research Review</span>
+          </div>
+          <div class="loop-arrow loop-arrow--left">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M32 8H4m0 0l5-5M4 8l5 5" stroke="var(--sds-border-strong)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="loop-card" style="--l-color: var(--sds-color-brand-fern)">
+            <span class="loop-label">Human Evaluation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ARTIFACTS ═══ -->
+  <section class="section section--surface" id="artifacts">
+    <div class="container">
+      <span class="section-label">Explore the Work</span>
+      <h2 class="section-title">Live Artifacts</h2>
+      <p class="section-desc">Each artifact was generated through this workflow — click to explore</p>
+
+      <div class="artifact-grid">
+        <a class="artifact-card" href="https://richhemsley3.github.io/design-system-lab/index.html" target="_blank" rel="noopener" style="--a-color: var(--sds-color-brand-atlantic); --a-bg: var(--sds-status-info-bg)">
+          <div class="artifact-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 3H5a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 3l7 7-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="artifact-title">Design System</h3>
+          <p class="artifact-desc">Code-first design system built from scratch using only a text prompt and the Beacon color palette.</p>
+          <span class="artifact-link">View design system <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3m0 0H5m6 0v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <a class="artifact-card" href="https://richhemsley3.github.io/data-management-report/" target="_blank" rel="noopener" style="--a-color: var(--sds-color-brand-fern); --a-bg: var(--sds-status-success-bg)">
+          <div class="artifact-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="artifact-title">Research Report</h3>
+          <p class="artifact-desc">Research agent output that gets evaluated and fed to design agents as foundational knowledge.</p>
+          <span class="artifact-link">View report <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3m0 0H5m6 0v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <a class="artifact-card" href="https://richhemsley3.github.io/data-management-journey-map/" target="_blank" rel="noopener" style="--a-color: var(--sds-color-blue-600); --a-bg: var(--sds-status-info-bg)">
+          <div class="artifact-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 5l5-2 6 3 5-2v12l-5 2-6-3-5 2V5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 3v12M13 6v12" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="artifact-title">Journey Map</h3>
+          <p class="artifact-desc">Architect-built user flows and journey maps that inform the design direction.</p>
+          <span class="artifact-link">View journey map <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3m0 0H5m6 0v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <a class="artifact-card" href="https://richhemsley3.github.io/data-management-platform-design/" target="_blank" rel="noopener" style="--a-color: var(--sds-color-purple-550); --a-bg: var(--sds-status-purple-bg)">
+          <div class="artifact-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7h16M6 7v10" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="artifact-title">Work Plan</h3>
+          <p class="artifact-desc">Architect-generated delivery plan with phased work breakdown, design recommendations, and priorities.</p>
+          <span class="artifact-link">View work plan <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3m0 0H5m6 0v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <a class="artifact-card" href="https://richhemsley3.github.io/data-management-prototype/" target="_blank" rel="noopener" style="--a-color: var(--sds-color-brand-birch); --a-bg: var(--sds-status-error-bg)">
+          <div class="artifact-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 15l4-8 3 4 3-6 4 10H3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="artifact-title">Click-Through Prototype</h3>
+          <p class="artifact-desc">Full interactive prototype built by design agents with sub-task breakdown and flow validation.</p>
+          <span class="artifact-link">View prototype <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3m0 0H5m6 0v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <a class="artifact-card" href="https://richhemsley3.github.io/data-management-platform/connection-flow-screen-flow.html" target="_blank" rel="noopener" style="--a-color: var(--sds-color-blue-700); --a-bg: var(--sds-status-info-bg)">
+          <div class="artifact-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="12" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="7" y="12" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M5 8v2a2 2 0 002 2h1M15 8v2a2 2 0 01-2 2h-1" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="artifact-title">Screen Flow Diagram</h3>
+          <p class="artifact-desc">Canvas-based screen flow for exploring the end-to-end experience and evaluating each flow.</p>
+          <span class="artifact-link">View screen flow <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3m0 0H5m6 0v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CLOSING ═══ -->
+  <section class="hero hero--closing" id="closing">
+    <div class="hero-bg">
+      <div class="hero-circle hero-circle-1"></div>
+      <div class="hero-circle hero-circle-2"></div>
+    </div>
+    <div class="hero-content">
+      <h2 class="hero-title">The Future of<br>Design is Hybrid</h2>
+      <p class="closing-lines">Human creativity sets the direction.<br>AI agents handle the execution at scale.<br>Together, they create something neither could alone.</p>
+      <p class="closing-byline">Rich Hemsley &middot; Claude Experimentation &middot; 2026</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
