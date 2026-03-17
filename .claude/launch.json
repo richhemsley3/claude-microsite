@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "microsite",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8090", "--directory", "/Users/richhemsley/Desktop/Claude/claude-microsite"],
+      "port": 8090
+    }
+  ]
+}

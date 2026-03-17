@@ -285,6 +285,29 @@ body {
   transform: translateY(-1px);
 }
 
+/* The Idea section */
+.section--idea {
+  padding: 80px 0;
+  background: var(--sds-color-warm-gray-050);
+}
+
+.idea-quote {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 0 0 24px;
+  border-left: 3px solid var(--sds-color-warm-gray-250);
+  text-align: left;
+}
+
+.idea-quote p {
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--sds-color-warm-gray-550);
+  margin: 0;
+}
+
 /* Closing hero */
 .hero--closing {
   min-height: 60vh;
