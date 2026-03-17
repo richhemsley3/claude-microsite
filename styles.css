@@ -658,7 +658,7 @@ body {
    ============================================================ */
 .pipeline {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 0;
   justify-content: center;
 }
