@@ -161,12 +161,44 @@ body {
    ============================================================ */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
-  background: var(--sds-color-brand-midnight);
+  background: var(--sds-color-warm-gray-050);
   overflow: hidden;
   padding: 56px 0 0;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 64px;
+  gap: 40px;
+}
+.hero-illustration {
+  flex: 0 1 480px;
+  max-width: 480px;
+}
+.hero-illustration img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .hero-illustration {
+    flex: none;
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
 .hero-bg {
@@ -178,7 +210,7 @@ body {
 .hero-circle {
   position: absolute;
   border-radius: 50%;
-  background: var(--sds-color-brand-atlantic);
+  background: var(--sds-color-warm-gray-150);
 }
 
 .hero-circle-1 {
@@ -186,7 +218,8 @@ body {
   height: 500px;
   top: -100px;
   right: -80px;
-  opacity: 0.25;
+  opacity: 0.5;
+  animation: heroFloat1 12s ease-in-out infinite;
 }
 
 .hero-circle-2 {
@@ -194,28 +227,41 @@ body {
   height: 300px;
   bottom: -60px;
   left: -60px;
-  opacity: 0.15;
+  opacity: 0.35;
+  animation: heroFloat2 15s ease-in-out infinite;
+}
+
+@keyframes heroFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-20px, 15px); }
+  50% { transform: translate(10px, 25px); }
+  75% { transform: translate(15px, -10px); }
+}
+
+@keyframes heroFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(15px, -10px); }
+  50% { transform: translate(-10px, -20px); }
+  75% { transform: translate(-20px, 10px); }
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: 0 64px;
+  flex: 1 1 auto;
+  max-width: 520px;
 }
 
 .hero-title {
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1.1;
+  color: var(--sds-color-brand-midnight);
+  line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 20px;
 }
 
 .hero-subtitle {
-  font-size: 20px;
-  color: var(--sds-color-brand-pacific);
+  font-size: 16px;
+  color: var(--sds-color-warm-gray-550);
   margin-bottom: 40px;
 }
 
@@ -1007,4 +1053,85 @@ body {
   .hero-content { padding: 0 24px; }
   .section { padding: 56px 0; }
   .container { padding: 0 20px; }
+}
+
+/* ============================================================
+   Scroll Animations
+   ============================================================ */
+
+/* Base hidden state for scroll-reveal elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children — each child delays more noticeably */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.12s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.24s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.36s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.48s; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.60s; }
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero parallax depth */
+.hero-bg {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+/* Section titles — slide from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale-in for special elements */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-scale,
+  .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

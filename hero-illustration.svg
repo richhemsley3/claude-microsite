@@ -1,0 +1,331 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <defs>
+    <!-- Glow filter for Claude -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Soft glow for particles -->
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Gradient for connection beam -->
+    <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#805AA1" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#A6CBD6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#D4A27F" stop-opacity="0.3"/>
+    </linearGradient>
+    <!-- Radial glow behind Claude -->
+    <radialGradient id="claudeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4A27F" stop-opacity="0.15"/>
+      <stop offset="70%" stop-color="#D4A27F" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#D4A27F" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Radial glow behind designer -->
+    <radialGradient id="designerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A6CBD6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#A6CBD6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes floatSlow { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes floatFast { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes floatTiny { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    @keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
+    @keyframes pulseSlow { 0%,100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+    @keyframes sparkle { 0%,100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1); } }
+    @keyframes orbit { 0% { transform: rotate(0deg) translateX(18px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(18px) rotate(-360deg); } }
+    @keyframes orbitSlow { 0% { transform: rotate(0deg) translateX(90px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(90px) rotate(-360deg); } }
+    @keyframes orbitReverse { 0% { transform: rotate(360deg) translateX(95px) rotate(-360deg); } 100% { transform: rotate(0deg) translateX(95px) rotate(0deg); } }
+    @keyframes travel {
+      0% { transform: translate(0, 0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translate(60px, -40px); opacity: 0; }
+    }
+    @keyframes travelBack {
+      0% { transform: translate(0, 0); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translate(-60px, 30px); opacity: 0; }
+    }
+    @keyframes spinSlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+    @keyframes waveHand { 0%,100% { transform: rotate(0deg); } 25% { transform: rotate(-8deg); } 75% { transform: rotate(8deg); } }
+
+    .float-1 { animation: float 4s ease-in-out infinite; }
+    .float-2 { animation: floatSlow 5s ease-in-out infinite 0.5s; }
+    .float-3 { animation: floatFast 3.5s ease-in-out infinite 1s; }
+    .float-4 { animation: float 4.5s ease-in-out infinite 0.8s; }
+    .float-5 { animation: floatTiny 6s ease-in-out infinite 0.3s; }
+    .pulse { animation: pulse 3s ease-in-out infinite; }
+    .pulse-slow { animation: pulseSlow 5s ease-in-out infinite; }
+    .sparkle-1 { animation: sparkle 2.5s ease-in-out infinite; }
+    .sparkle-2 { animation: sparkle 2.5s ease-in-out infinite 0.8s; }
+    .sparkle-3 { animation: sparkle 2.5s ease-in-out infinite 1.6s; }
+    .sparkle-4 { animation: sparkle 3s ease-in-out infinite 0.4s; }
+    .sparkle-5 { animation: sparkle 3.5s ease-in-out infinite 2s; }
+    .orbit-dot { animation: orbit 6s linear infinite; transform-origin: center; }
+    .orbit-slow { animation: orbitSlow 12s linear infinite; }
+    .orbit-reverse { animation: orbitReverse 15s linear infinite; }
+    .travel-1 { animation: travel 3s ease-in-out infinite; }
+    .travel-2 { animation: travel 3s ease-in-out infinite 1s; }
+    .travel-3 { animation: travel 3s ease-in-out infinite 2s; }
+    .travel-back-1 { animation: travelBack 4s ease-in-out infinite 0.5s; }
+    .travel-back-2 { animation: travelBack 4s ease-in-out infinite 2s; }
+    .spin-slow { animation: spinSlow 20s linear infinite; }
+    .breathe { animation: breathe 4s ease-in-out infinite; }
+  </style>
+
+  <!-- ═══ AMBIENT BACKGROUND ELEMENTS ═══ -->
+  <!-- Faint grid dots -->
+  <g opacity="0.15">
+    <circle cx="50" cy="80" r="1.5" fill="#A6CBD6"/>
+    <circle cx="100" cy="80" r="1.5" fill="#A6CBD6"/>
+    <circle cx="150" cy="80" r="1.5" fill="#A6CBD6"/>
+    <circle cx="200" cy="80" r="1.5" fill="#A6CBD6"/>
+    <circle cx="250" cy="80" r="1.5" fill="#A6CBD6"/>
+    <circle cx="50" cy="130" r="1.5" fill="#A6CBD6"/>
+    <circle cx="100" cy="130" r="1.5" fill="#A6CBD6"/>
+    <circle cx="150" cy="130" r="1.5" fill="#A6CBD6"/>
+    <circle cx="200" cy="130" r="1.5" fill="#A6CBD6"/>
+    <circle cx="250" cy="130" r="1.5" fill="#A6CBD6"/>
+    <circle cx="350" cy="380" r="1.5" fill="#A6CBD6"/>
+    <circle cx="400" cy="380" r="1.5" fill="#A6CBD6"/>
+    <circle cx="450" cy="380" r="1.5" fill="#A6CBD6"/>
+    <circle cx="500" cy="380" r="1.5" fill="#A6CBD6"/>
+    <circle cx="550" cy="380" r="1.5" fill="#A6CBD6"/>
+    <circle cx="350" cy="420" r="1.5" fill="#A6CBD6"/>
+    <circle cx="400" cy="420" r="1.5" fill="#A6CBD6"/>
+    <circle cx="450" cy="420" r="1.5" fill="#A6CBD6"/>
+    <circle cx="500" cy="420" r="1.5" fill="#A6CBD6"/>
+    <circle cx="550" cy="420" r="1.5" fill="#A6CBD6"/>
+  </g>
+
+  <!-- Faint concentric rings (background texture) -->
+  <circle cx="300" cy="240" r="200" fill="none" stroke="#B0ABA2" stroke-width="0.3" opacity="0.08" class="spin-slow"/>
+  <circle cx="300" cy="240" r="160" fill="none" stroke="#B0ABA2" stroke-width="0.3" opacity="0.1" stroke-dasharray="3 12"/>
+
+  <!-- ═══ DESIGNER GLOW ═══ -->
+  <circle cx="160" cy="270" r="100" fill="url(#designerGlow)"/>
+
+  <!-- ═══ CLAUDE GLOW ═══ -->
+  <circle cx="420" cy="240" r="120" fill="url(#claudeGlow)" class="breathe"/>
+
+  <!-- ═══ DESIGNER (left side) ═══ -->
+  <g class="float-2">
+    <!-- Chair -->
+    <rect x="110" y="310" width="80" height="8" rx="4" fill="#B0ABA2"/>
+    <rect x="120" y="318" width="4" height="30" rx="2" fill="#B0ABA2"/>
+    <rect x="166" y="318" width="4" height="30" rx="2" fill="#B0ABA2"/>
+    <rect x="180" y="260" width="6" height="58" rx="3" fill="#B0ABA2"/>
+    <path d="M118 310 Q150 295 182 310" fill="#B0ABA2"/>
+
+    <!-- Body - torso -->
+    <rect x="130" y="258" width="40" height="52" rx="6" fill="#A6CBD6"/>
+    <!-- Arms -->
+    <rect x="118" y="264" width="14" height="36" rx="7" fill="#A6CBD6"/>
+    <rect x="168" y="264" width="14" height="36" rx="7" fill="#A6CBD6"/>
+    <!-- Forearms reaching to desk -->
+    <rect x="122" y="290" width="10" height="24" rx="5" fill="#8ab5c2" transform="rotate(-20 127 290)"/>
+    <rect x="170" y="290" width="10" height="24" rx="5" fill="#8ab5c2" transform="rotate(20 175 290)"/>
+
+    <!-- Head -->
+    <circle cx="150" cy="240" r="22" fill="#d4a574"/>
+    <!-- Hair -->
+    <path d="M128 234 Q130 215 150 212 Q170 215 172 234" fill="#3d2b1f" stroke="none"/>
+    <ellipse cx="150" cy="218" rx="18" ry="8" fill="#3d2b1f"/>
+    <!-- Eyes -->
+    <circle cx="142" cy="242" r="2.5" fill="#00132B"/>
+    <circle cx="158" cy="242" r="2.5" fill="#00132B"/>
+    <!-- Slight smile -->
+    <path d="M144 250 Q150 254 156 250" stroke="#00132B" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ═══ DESK ═══ -->
+  <rect x="80" y="308" width="200" height="6" rx="2" fill="#D0CBC3"/>
+  <rect x="90" y="314" width="6" height="40" rx="2" fill="#B0ABA2"/>
+  <rect x="264" y="314" width="6" height="40" rx="2" fill="#B0ABA2"/>
+
+  <!-- Coffee mug on desk -->
+  <g class="float-5">
+    <rect x="88" y="294" width="14" height="14" rx="3" fill="#948E85"/>
+    <rect x="100" y="298" width="6" height="6" rx="3" fill="none" stroke="#B0ABA2" stroke-width="1.5"/>
+    <!-- Steam -->
+    <path d="M92 291 Q94 286 92 281" stroke="#A6CBD6" stroke-width="0.8" fill="none" opacity="0.3" class="pulse"/>
+    <path d="M97 292 Q99 285 97 279" stroke="#A6CBD6" stroke-width="0.8" fill="none" opacity="0.2" class="pulse-slow"/>
+  </g>
+
+  <!-- Pen/stylus on desk -->
+  <rect x="240" y="300" width="30" height="3" rx="1.5" fill="#948E85" transform="rotate(-15 255 301)"/>
+  <circle cx="240" cy="301" r="2" fill="#805AA1" opacity="0.6" transform="rotate(-15 255 301)"/>
+
+  <!-- ═══ MONITOR ON DESK ═══ -->
+  <g class="float-2">
+    <!-- Monitor stand -->
+    <rect x="158" y="280" width="6" height="28" rx="2" fill="#948E85"/>
+    <rect x="148" y="300" width="26" height="4" rx="2" fill="#948E85"/>
+    <!-- Monitor -->
+    <rect x="112" y="225" width="98" height="58" rx="6" fill="#FFFFFF" stroke="#B0ABA2" stroke-width="1.5"/>
+    <!-- Screen content - wireframe lines -->
+    <rect x="120" y="233" width="34" height="3" rx="1.5" fill="#A6CBD6" opacity="0.5"/>
+    <rect x="120" y="240" width="50" height="3" rx="1.5" fill="#A6CBD6" opacity="0.3"/>
+    <rect x="120" y="247" width="42" height="3" rx="1.5" fill="#A6CBD6" opacity="0.3"/>
+    <rect x="120" y="256" width="82" height="18" rx="3" fill="#E0DCD3" opacity="0.6"/>
+    <!-- Color squares on screen -->
+    <rect x="172" y="233" width="8" height="8" rx="2" fill="#7A9A01" opacity="0.7"/>
+    <rect x="183" y="233" width="8" height="8" rx="2" fill="#805AA1" opacity="0.7"/>
+    <rect x="194" y="233" width="8" height="8" rx="2" fill="#A6CBD6" opacity="0.7"/>
+    <!-- Cursor blinking on screen -->
+    <rect x="120" y="260" width="2" height="10" rx="1" fill="#A6CBD6" opacity="0.8" class="pulse"/>
+  </g>
+
+  <!-- ═══ FLOATING STICKY NOTE (upper left) ═══ -->
+  <g class="float-3">
+    <rect x="40" y="155" width="45" height="40" rx="3" fill="#7A9A01" opacity="0.15"/>
+    <rect x="46" y="163" width="28" height="2" rx="1" fill="#7A9A01" opacity="0.3"/>
+    <rect x="46" y="169" width="20" height="2" rx="1" fill="#7A9A01" opacity="0.2"/>
+    <rect x="46" y="175" width="32" height="2" rx="1" fill="#7A9A01" opacity="0.2"/>
+  </g>
+
+  <!-- ═══ CONNECTION ZONE between designer and Claude ═══ -->
+  <!-- Flowing beam path -->
+  <path d="M220 270 C260 260 300 230 370 220" stroke="url(#beamGrad)" stroke-width="2" fill="none" stroke-dasharray="6 4" class="pulse"/>
+  <path d="M220 285 C260 275 310 255 370 240" stroke="url(#beamGrad)" stroke-width="1.5" fill="none" stroke-dasharray="4 6" opacity="0.5" class="pulse-slow"/>
+  <path d="M220 295 C270 290 320 270 370 260" stroke="url(#beamGrad)" stroke-width="1" fill="none" stroke-dasharray="3 8" opacity="0.3"/>
+
+  <!-- ═══ TRAVELING PARTICLES (designer → Claude) ═══ -->
+  <g>
+    <circle cx="260" cy="268" r="3" fill="#A6CBD6" filter="url(#softGlow)" class="travel-1"/>
+    <circle cx="270" cy="275" r="2" fill="#7A9A01" filter="url(#softGlow)" class="travel-2"/>
+    <circle cx="265" cy="282" r="2.5" fill="#805AA1" filter="url(#softGlow)" class="travel-3"/>
+  </g>
+
+  <!-- ═══ TRAVELING PARTICLES (Claude → designer) ═══ -->
+  <g>
+    <circle cx="360" cy="240" r="2" fill="#D4A27F" filter="url(#softGlow)" class="travel-back-1"/>
+    <circle cx="355" cy="255" r="2.5" fill="#D4A27F" filter="url(#softGlow)" class="travel-back-2"/>
+  </g>
+
+  <!-- ═══ DATA PARTICLES (midfield sparkles) ═══ -->
+  <g>
+    <circle cx="295" cy="265" r="2.5" fill="#A6CBD6" class="sparkle-1" filter="url(#softGlow)"/>
+    <circle cx="310" cy="248" r="2" fill="#7A9A01" class="sparkle-2" filter="url(#softGlow)"/>
+    <circle cx="325" cy="232" r="3" fill="#805AA1" class="sparkle-3" filter="url(#softGlow)"/>
+    <circle cx="305" cy="275" r="1.5" fill="#A6CBD6" class="sparkle-4"/>
+    <circle cx="318" cy="255" r="2" fill="#D4A27F" class="sparkle-5"/>
+    <circle cx="290" cy="250" r="1.5" fill="#7A9A01" class="sparkle-1"/>
+    <circle cx="340" cy="245" r="1" fill="#A6CBD6" class="sparkle-4"/>
+  </g>
+
+  <!-- ═══ CLAUDE (right side) ═══ -->
+  <g class="float-1">
+    <!-- Claude body - rounded friendly shape -->
+    <ellipse cx="420" cy="240" rx="65" ry="72" fill="#E0DCD3"/>
+    <ellipse cx="420" cy="240" rx="65" ry="72" fill="none" stroke="#B0ABA2" stroke-width="1"/>
+
+    <!-- Claude official logo -->
+    <g transform="translate(396, 216) scale(2)" filter="url(#glow)">
+      <path fill="#D4A27F" d="M4.7144 15.9555l4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/>
+    </g>
+
+    <!-- Inner thinking ring -->
+    <circle cx="420" cy="240" r="78" fill="none" stroke="#A6CBD6" stroke-width="0.5" opacity="0.2" stroke-dasharray="6 8" class="pulse"/>
+
+    <!-- Outer thinking ring -->
+    <circle cx="420" cy="240" r="92" fill="none" stroke="#D4A27F" stroke-width="0.3" opacity="0.1" stroke-dasharray="2 14" class="pulse-slow"/>
+
+    <!-- Orbiting dots -->
+    <g style="transform-origin: 420px 240px;">
+      <circle cx="420" cy="162" r="4" fill="#7A9A01" class="orbit-dot" style="transform-origin: 420px 240px;"/>
+    </g>
+  </g>
+
+  <!-- ═══ ORBITING DESIGN ELEMENTS around Claude ═══ -->
+  <g style="transform-origin: 420px 240px;" class="orbit-slow">
+    <rect x="420" y="240" width="12" height="12" rx="3" fill="#805AA1" opacity="0.5"/>
+  </g>
+  <g style="transform-origin: 420px 240px;" class="orbit-reverse">
+    <circle cx="420" cy="240" r="4" fill="#A6CBD6" opacity="0.4"/>
+  </g>
+
+  <!-- ═══ DESIGN ARTIFACTS floating around Claude ═══ -->
+
+  <!-- Floating component card (top right) -->
+  <g class="float-3">
+    <rect x="470" y="130" width="75" height="55" rx="6" fill="#FFFFFF" stroke="#B0ABA2" stroke-width="1"/>
+    <!-- Mini button -->
+    <rect x="478" y="138" width="30" height="3" rx="1.5" fill="#A6CBD6" opacity="0.6"/>
+    <rect x="478" y="145" width="54" height="3" rx="1.5" fill="#A6CBD6" opacity="0.3"/>
+    <rect x="478" y="152" width="40" height="3" rx="1.5" fill="#A6CBD6" opacity="0.3"/>
+    <!-- Check icon -->
+    <circle cx="535" cy="173" r="6" fill="#7A9A01" opacity="0.5"/>
+    <path d="M531 173 L534 176 L539 170" stroke="#ffffff" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  </g>
+
+  <!-- Floating color swatch (right) -->
+  <g class="float-4">
+    <rect x="505" y="225" width="20" height="20" rx="4" fill="#805AA1" opacity="0.8"/>
+    <rect x="505" y="250" width="20" height="20" rx="4" fill="#7A9A01" opacity="0.8"/>
+    <rect x="505" y="275" width="20" height="20" rx="4" fill="#A6CBD6" opacity="0.8"/>
+    <rect x="505" y="300" width="20" height="20" rx="4" fill="#D4A27F" opacity="0.6"/>
+  </g>
+
+  <!-- Floating wireframe/layout card (bottom right) -->
+  <g class="float-2">
+    <rect x="455" y="325" width="85" height="60" rx="6" fill="#FFFFFF" stroke="#B0ABA2" stroke-width="1"/>
+    <rect x="461" y="331" width="73" height="8" rx="2" fill="#E0DCD3"/>
+    <rect x="461" y="343" width="32" height="34" rx="3" fill="#E0DCD3" opacity="0.5"/>
+    <rect x="497" y="343" width="37" height="16" rx="2" fill="#A6CBD6" opacity="0.2"/>
+    <rect x="497" y="363" width="37" height="3" rx="1.5" fill="#A6CBD6" opacity="0.15"/>
+    <rect x="497" y="370" width="26" height="3" rx="1.5" fill="#A6CBD6" opacity="0.15"/>
+    <!-- Tiny layout grid inside card -->
+    <rect x="464" y="349" width="12" height="10" rx="1" fill="#A6CBD6" opacity="0.1"/>
+    <rect x="479" y="349" width="12" height="10" rx="1" fill="#7A9A01" opacity="0.1"/>
+    <rect x="464" y="362" width="12" height="10" rx="1" fill="#805AA1" opacity="0.1"/>
+    <rect x="479" y="362" width="12" height="10" rx="1" fill="#D4A27F" opacity="0.1"/>
+  </g>
+
+  <!-- Floating phone mockup (far left) -->
+  <g class="float-4">
+    <rect x="20" y="240" width="36" height="60" rx="6" fill="#FFFFFF" stroke="#B0ABA2" stroke-width="1"/>
+    <rect x="24" y="248" width="28" height="4" rx="1" fill="#E0DCD3"/>
+    <rect x="24" y="256" width="28" height="28" rx="2" fill="#E0DCD3" opacity="0.4"/>
+    <rect x="24" y="288" width="18" height="3" rx="1.5" fill="#A6CBD6" opacity="0.2"/>
+    <circle cx="38" cy="295" r="3" fill="#948E85"/>
+  </g>
+
+  <!-- ═══ SPARKLE ACCENTS (more of them) ═══ -->
+  <g class="sparkle-1">
+    <path d="M350 150 L352 144 L354 150 L360 152 L354 154 L352 160 L350 154 L344 152Z" fill="#A6CBD6" opacity="0.7"/>
+  </g>
+  <g class="sparkle-2">
+    <path d="M480 190 L481.5 185 L483 190 L488 191.5 L483 193 L481.5 198 L480 193 L475 191.5Z" fill="#7A9A01" opacity="0.6"/>
+  </g>
+  <g class="sparkle-3">
+    <path d="M370 315 L371.5 310 L373 315 L378 316.5 L373 318 L371.5 323 L370 318 L365 316.5Z" fill="#805AA1" opacity="0.5"/>
+  </g>
+  <g class="sparkle-4">
+    <path d="M80 180 L81.5 176 L83 180 L87 181.5 L83 183 L81.5 187 L80 183 L76 181.5Z" fill="#D4A27F" opacity="0.4"/>
+  </g>
+  <g class="sparkle-5">
+    <path d="M550 310 L551.5 306 L553 310 L557 311.5 L553 313 L551.5 317 L550 313 L546 311.5Z" fill="#A6CBD6" opacity="0.4"/>
+  </g>
+  <g class="sparkle-1">
+    <path d="M440 120 L441 117 L442 120 L445 121 L442 122 L441 125 L440 122 L437 121Z" fill="#D4A27F" opacity="0.5"/>
+  </g>
+  <g class="sparkle-3">
+    <path d="M160 400 L161.5 396 L163 400 L167 401.5 L163 403 L161.5 407 L160 403 L156 401.5Z" fill="#7A9A01" opacity="0.3"/>
+  </g>
+
+  <!-- ═══ FLOATING MICRO-CIRCLES (ambient) ═══ -->
+  <circle cx="560" cy="160" r="3" fill="#A6CBD6" opacity="0.08" class="float-5"/>
+  <circle cx="30" cy="350" r="4" fill="#D4A27F" opacity="0.06" class="float-3"/>
+  <circle cx="580" cy="400" r="5" fill="#805AA1" opacity="0.05" class="float-1"/>
+  <circle cx="300" cy="100" r="2" fill="#7A9A01" opacity="0.08" class="float-4"/>
+  <circle cx="520" cy="120" r="2.5" fill="#D4A27F" opacity="0.07" class="float-2"/>
+
+</svg>
