@@ -48,24 +48,18 @@ function initActiveNav() {
   sections.forEach(section => observer.observe(section));
 }
 
-// ─── Smooth header shadow on scroll ─────────────────────────
+// ─── Frosted glass header on scroll ─────────────────────────
 function initHeaderShadow() {
   const header = document.querySelector('.site-header');
-  let ticking = false;
+  let scrolled = false;
 
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        if (window.scrollY > 10) {
-          header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.06)';
-        } else {
-          header.style.boxShadow = 'none';
-        }
-        ticking = false;
-      });
-      ticking = true;
+  window.addEventListener('scroll', function() {
+    const shouldBeScrolled = window.scrollY > 50;
+    if (shouldBeScrolled !== scrolled) {
+      scrolled = shouldBeScrolled;
+      header.classList.toggle('is-scrolled', scrolled);
     }
-  });
+  }, { passive: true });
 }
 
 // ─── Init ───────────────────────────────────────────────────
