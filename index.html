@@ -78,8 +78,122 @@
     </div>
   </section>
 
+  <!-- ═══ WHAT IS A SKILL? ═══ -->
+  <section class="section section--surface" id="what-is-a-skill">
+    <div class="container">
+      <span class="section-label reveal-left">Step 1 — Create Skills</span>
+      <h2 class="section-title reveal-left">What is a Skill?</h2>
+      <p class="section-desc reveal">A skill is a markdown file that turns Claude into a domain specialist</p>
+
+      <div class="skill-explainer reveal-stagger">
+        <div class="skill-text">
+          <p class="skill-lead">Each skill is a <code>SKILL.md</code> file inside its own directory. It contains YAML frontmatter for metadata and a structured prompt that defines Claude's expertise, methodology, and output format for a specific design discipline.</p>
+
+          <div class="skill-anatomy">
+            <div class="skill-anatomy-item">
+              <div class="skill-anatomy-icon" style="--sa-color: var(--sds-color-brand-atlantic); --sa-bg: var(--sds-status-info-bg)">
+                <span class="material-symbols-outlined">badge</span>
+              </div>
+              <div class="skill-anatomy-content">
+                <h4 class="skill-anatomy-title">Frontmatter</h4>
+                <p class="skill-anatomy-desc">Name and description that act as an invocation trigger — telling Claude when this skill should activate</p>
+              </div>
+            </div>
+            <div class="skill-anatomy-item">
+              <div class="skill-anatomy-icon" style="--sa-color: var(--sds-color-brand-fern); --sa-bg: var(--sds-status-success-bg)">
+                <span class="material-symbols-outlined">psychology</span>
+              </div>
+              <div class="skill-anatomy-content">
+                <h4 class="skill-anatomy-title">Role</h4>
+                <p class="skill-anatomy-desc">The specialist persona Claude assumes — deep domain knowledge for a specific design discipline</p>
+              </div>
+            </div>
+            <div class="skill-anatomy-item">
+              <div class="skill-anatomy-icon" style="--sa-color: var(--sds-color-purple-550); --sa-bg: var(--sds-status-purple-bg)">
+                <span class="material-symbols-outlined">account_tree</span>
+              </div>
+              <div class="skill-anatomy-content">
+                <h4 class="skill-anatomy-title">Process</h4>
+                <p class="skill-anatomy-desc">Step-by-step methodology the agent follows — research, define, spec, and plan</p>
+              </div>
+            </div>
+            <div class="skill-anatomy-item">
+              <div class="skill-anatomy-icon" style="--sa-color: var(--sds-color-brand-birch); --sa-bg: var(--sds-status-error-bg)">
+                <span class="material-symbols-outlined">output</span>
+              </div>
+              <div class="skill-anatomy-content">
+                <h4 class="skill-anatomy-title">Output Format</h4>
+                <p class="skill-anatomy-desc">Structured deliverables — tables, Mermaid diagrams, and token-referenced specs</p>
+              </div>
+            </div>
+            <div class="skill-anatomy-item">
+              <div class="skill-anatomy-icon" style="--sa-color: var(--sds-color-blue-600); --sa-bg: var(--sds-status-info-bg)">
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+              <div class="skill-anatomy-content">
+                <h4 class="skill-anatomy-title">Next Steps</h4>
+                <p class="skill-anatomy-desc">Recommended follow-on skills to continue the workflow — chaining agents together</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-code-block reveal-scale">
+          <div class="skill-code-header">
+            <span class="skill-code-dot"></span>
+            <span class="skill-code-dot"></span>
+            <span class="skill-code-dot"></span>
+            <span class="skill-code-filename">product-designer / SKILL.md</span>
+          </div>
+          <pre class="skill-code-body"><code><span class="code-punctuation">---</span>
+<span class="code-key">name:</span> <span class="code-value">product-designer</span>
+<span class="code-key">description:</span> <span class="code-value">"Triggers on design</span>
+  <span class="code-value">this feature, how should</span>
+  <span class="code-value">this work"</span>
+<span class="code-punctuation">---</span>
+
+<span class="code-heading"># Role</span>
+Product design specialist...
+
+<span class="code-heading"># Process</span>
+1. Research existing patterns
+2. Define interaction model
+3. Spec layouts with tokens
+
+<span class="code-heading"># Output Format</span>
+Tables, specs, Mermaid diagrams...
+
+<span class="code-heading"># Next Steps</span>
+→ /page-designer
+→ /component-builder</code></pre>
+        </div>
+      </div>
+
+      <div class="skill-directory reveal">
+        <div class="skill-directory-label">
+          <span class="material-symbols-outlined" style="font-size: 16px">folder_open</span>
+          Skill directory structure
+        </div>
+        <div class="skill-directory-tree">
+          <div class="tree-line"><span class="tree-folder">/skills/</span></div>
+          <div class="tree-line tree-indent-1"><span class="tree-folder">/product-designer/</span></div>
+          <div class="tree-line tree-indent-2"><span class="tree-file">SKILL.md</span></div>
+          <div class="tree-line tree-indent-2"><span class="tree-folder">/references/</span></div>
+          <div class="tree-line tree-indent-3"><span class="tree-file">tokens-reference.md</span></div>
+          <div class="tree-line tree-indent-3"><span class="tree-file">component-patterns.md</span></div>
+          <div class="tree-line tree-indent-1"><span class="tree-folder">/design-reviewer/</span></div>
+          <div class="tree-line tree-indent-2"><span class="tree-file">SKILL.md</span></div>
+          <div class="tree-line tree-indent-2"><span class="tree-folder">/references/</span></div>
+          <div class="tree-line tree-indent-3"><span class="tree-file">review-checklist.md</span></div>
+          <div class="tree-line tree-indent-3"><span class="tree-file">wcag-checklist.md</span></div>
+          <div class="tree-line tree-indent-1 tree-dim">... 21 more skills</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ THE AGENT TEAM ═══ -->
-  <section class="section section--surface" id="skills">
+  <section class="section" id="skills">
     <div class="container">
       <span class="section-label reveal-left">Step 1 — Create Skills</span>
       <h2 class="section-title reveal-left">The Agent Team</h2>
