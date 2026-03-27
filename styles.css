@@ -227,10 +227,11 @@ h1, h2 {
    ============================================================ */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 96px;
   background: transparent;
   overflow: visible;
   padding: 0;
