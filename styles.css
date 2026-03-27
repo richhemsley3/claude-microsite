@@ -569,7 +569,7 @@ h1, h2 {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: var(--sa-bg);
+  background: color-mix(in srgb, var(--sa-color) 14%, transparent);
   color: var(--sa-color);
   display: flex;
   align-items: center;
@@ -724,8 +724,8 @@ h1, h2 {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: var(--agent-color);
-  color: #FFFFFF;
+  background: color-mix(in srgb, var(--agent-color) 14%, transparent);
+  color: var(--agent-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -779,8 +779,8 @@ h1, h2 {
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: var(--f-color);
-  color: #FFFFFF;
+  background: color-mix(in srgb, var(--f-color) 14%, transparent);
+  color: var(--f-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -843,7 +843,7 @@ h1, h2 {
   width: 48px;
   height: 48px;
   border-radius: 16px;
-  background: var(--o-bg);
+  background: color-mix(in srgb, var(--o-color) 14%, transparent);
   color: var(--o-color);
   display: flex;
   align-items: center;
@@ -1016,7 +1016,7 @@ h1, h2 {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: var(--qa-bg);
+  background: color-mix(in srgb, var(--qa-color) 14%, transparent);
   color: var(--qa-color);
   display: flex;
   align-items: center;
@@ -1210,7 +1210,7 @@ h1, h2 {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: var(--a-bg);
+  background: color-mix(in srgb, var(--a-color) 14%, transparent);
   color: var(--a-color);
   display: flex;
   align-items: center;
